@@ -7,9 +7,38 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
+  <!-- manually add google map -->
+  <script
+    src="http://maps.googleapis.com/maps/api/js">
+  </script>
+
+
+  <script>
+var myCenter=new google.maps.LatLng(30.274082,-97.738744);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:15,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 </head>
 <body>
   <app-root>Loading...</app-root>
+  <div id="googleMap" style="width:1000px;height:600px;"></div>
 </body>
 </html>
