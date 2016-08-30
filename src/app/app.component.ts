@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  title = 'app is working - app-angular2';
+  title: string = 'app is working - app-angular2 with map and firebase data';
 }

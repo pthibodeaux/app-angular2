@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,10 +9,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- manually add google map -->
-  <script
-    src="http://maps.googleapis.com/maps/api/js">
-  </script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDMNMaawmFeWzsabVVpNbYaFDbC-XltlxI"></script>
 
   <script>
       var map;
@@ -116,8 +113,8 @@
           moveMarkers();
           showMarkers();
       }
-      
-      setInterval(refreshMap, 5000)
+
+      setInterval(refreshMap, 5000);
 
       // Shows any markers currently in the array.
       function moveMarkers() {
@@ -126,21 +123,17 @@
             var lng = mapMarkers[i].position.lng();
             console.log("** refresh  = " + mapMarkers[i].position.lat() + "," + mapMarkers[i].position.lng() );
             // scatter the locations
-            if (i%2 == 0)
-            {
-                lat = lat + .0002
+            if (i%2 === 0) {
+                lat = lat + .0002;
             }
-            else if (i%3 == 0)
-            {
-                lng = lng - .0002
+            else if (i%3 === 0) {
+                lng = lng - .0002;
             }
-            if (i%4 == 0)
-            {
-                lat = lat - .0001
+            if (i%4 === 0) {
+                lat = lat - .0001;
             }
-            else if (i%5 == 0)
-            {
-                lng = lng + .0001
+            else if (i%5 === 0) {
+                lng = lng + .0001;
             }
             var latlng = new google.maps.LatLng(lat,lng);
             mapMarkers[i].setPosition(latlng);
